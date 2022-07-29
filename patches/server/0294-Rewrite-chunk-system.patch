@@ -11503,7 +11503,7 @@ index 0000000000000000000000000000000000000000..b4fd00150d8ea566aea626fa6714efa3
 +}
 diff --git a/src/main/java/io/papermc/paper/chunk/system/scheduling/NewChunkHolder.java b/src/main/java/io/papermc/paper/chunk/system/scheduling/NewChunkHolder.java
 new file mode 100644
-index 0000000000000000000000000000000000000000..ab4317c43a0b2b2608381524b1d12eb7764d6264
+index 0000000000000000000000000000000000000000..3765667f5e182cb6a6743056a21a542aaccac059
 --- /dev/null
 +++ b/src/main/java/io/papermc/paper/chunk/system/scheduling/NewChunkHolder.java
 @@ -0,0 +1,1913 @@
@@ -13114,7 +13114,7 @@ index 0000000000000000000000000000000000000000..ab4317c43a0b2b2608381524b1d12eb7
 +        boolean canSavePOI = poi != null && poi.isDirty();
 +        boolean canSaveEntities = entities != null;
 +
-+        try (co.aikar.timings.Timing ignored = this.world.timings.chunkSave.startTiming()) { // Paper
++//        try (co.aikar.timings.Timing ignored = this.world.timings.chunkSave.startTiming()) { // Paper // Purpur
 +            if (canSaveChunk) {
 +                canSaveChunk = this.saveChunk(chunk, unloading);
 +            }
@@ -13128,7 +13128,7 @@ index 0000000000000000000000000000000000000000..ab4317c43a0b2b2608381524b1d12eb7
 +                    this.lastEntityUnload = null;
 +                }
 +            }
-+        }
++//        } // Purpur
 +
 +        return executedUnloadTask | canSaveChunk | canSaveEntities | canSavePOI;
 +    }
